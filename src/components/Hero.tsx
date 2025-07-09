@@ -11,7 +11,7 @@ const Hero = () => {
           href="https://ml-valentines.github.io/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-white hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-all duration-200"
+          className="text-white hover:bg-gradient-to-r hover:from-blue-400 hover:via-purple-500 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-all duration-200"
         >
           <strong>vision transformer</strong>
         </a>{' '}
