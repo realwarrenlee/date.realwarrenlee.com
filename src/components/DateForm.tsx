@@ -179,7 +179,7 @@ const DateForm: React.FC<DateFormProps> = () => {
             <div className="h-1 w-20 bg-white/30 rounded-full"></div>
             <p className="text-base md:text-lg leading-relaxed text-white/90 mt-4">
               Fill out this form and let's see if we're a match made in{' '}
-              <span className="text-white hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-all duration-200">
+              <span className="text-white hover:bg-gradient-to-r hover:from-blue-400 hover:via-purple-500 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-all duration-200">
                 <strong>silicon heaven</strong>
               </span>
               .
