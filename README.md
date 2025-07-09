@@ -1,6 +1,6 @@
 # Warren Lee
 
-A React TypeScript personal website built with Vite and Tailwind CSS.
+A React TypeScript dating website built with Vite and Tailwind CSS.
 
 Featuring Formspree.
 
