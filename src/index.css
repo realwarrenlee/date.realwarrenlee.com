@@ -4,7 +4,7 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #7DD3FC, #C084FC, #F472B6, #FBBF24);
+    background: radial-gradient(circle at center, #7DD3FC, #C084FC, #F472B6, #FBBF24);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -35,20 +35,5 @@
 
   .card-shadow-hover {
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
-  }
-
-  .pulse {
-    animation: pulseDot 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  @keyframes pulseDot {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.6;
-      transform: scale(1.3);
-    }
   }
 }

@@ -1,22 +1,41 @@
-import React from 'react';
+import { User, Camera, FileText } from 'lucide-react';
 
-const Hero = () => {
+interface HeroProps {
+  onNavigate: (section: string) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
+  const navigationItems = [
+    { id: 'profile', label: 'Profile', icon: User },
+    { id: 'pics', label: 'Pictures', icon: Camera },
+    { id: 'form', label: 'Form', icon: FileText },
+  ];
+
   return (
-    <div className="pt-8 md:pt-16">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-4">Date Me</h2>
-      <div className="h-1 w-20 bg-white/30 rounded-full"></div>
-      <p className="text-base md:text-lg leading-relaxed text-white/90 mt-4">
-        They say love is blind, but my{' '}
-        <a 
-          href="https://ml-valentines.github.io/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-white hover:bg-gradient-to-r hover:from-blue-400 hover:via-purple-500 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-all duration-200"
-        >
-          <strong>vision transformer</strong>
-        </a>{' '}
-        has 12 attention heads just for you.
-      </p>
+    <div className="text-center backdrop-blur-lg p-4 sm:p-6 md:p-8 max-w-4xl mx-auto">
+      <div className="space-y-6 md:space-y-8">
+        <div className="space-y-3 md:space-y-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal gradient-text">
+            Date Me
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg font-mono text-white/90 px-4 drop-shadow-md">
+          They say love is blind, but my vision transformer has 12 attention heads just for you.
+          </p>
+        </div>
+        
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 pt-4 px-4">
+          {navigationItems.map(({ id, label, icon: Icon }) => (
+            <button
+              key={id}
+              onClick={() => onNavigate(id)}
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl px-4 sm:px-6 py-2.5 sm:py-3 text-white font-medium transition-all duration-200 ease-out hover:scale-105 text-sm sm:text-base min-w-fit button-shadow hover:button-shadow-hover"
+            >
+              <Icon size={16} className="sm:w-[18px] sm:h-[18px] flex-shrink-0" />
+              <span className="whitespace-nowrap overflow-visible">{label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
