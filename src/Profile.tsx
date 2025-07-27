@@ -91,13 +91,13 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
         </div>
         <div className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
           <h3 className="text-2xl font-bold mb-4">Interests</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {profileData.interests.map((interest, index) => {
               const IconComponent = getInterestIcon(interest);
               return (
                 <div key={index} onClick={() => handleItemClick(interest)} className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer transform hover:scale-105">
                   <IconComponent size={18} className="text-white/70" />
-                  <span className="text-white/80" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>{interest}</span>
+                  <span className="text-white/80">{interest}</span>
                 </div>
               );
             })}
@@ -105,13 +105,13 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
         </div>
         <div className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
           <h3 className="text-2xl font-bold mb-4">Values</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {profileData.values.map((value, index) => {
               const IconComponent = getValueIcon(value);
               return (
                 <div key={index} onClick={() => handleItemClick(value)} className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer transform hover:scale-105">
                   <IconComponent size={18} className="text-white/70" />
-                  <span className="text-white/80" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>{value}</span>
+                  <span className="text-white/80">{value}</span>
                 </div>
               );
             })}
@@ -119,13 +119,13 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
         </div>
         <div className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
           <h3 className="text-2xl font-bold mb-4">Looking For</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {profileData.lookingFor.map((item, index) => {
               const IconComponent = getLookingForIcon(item);
               return (
                 <div key={index} onClick={() => handleItemClick(item)} className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer transform hover:scale-105">
                   <IconComponent size={18} className="text-white/70" />
-                  <span className="text-white/80" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>{item}</span>
+                  <span className="text-white/80">{item}</span>
                 </div>
               );
             })}
@@ -133,13 +133,13 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
         </div>
         <div className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
           <h3 className="text-2xl font-bold mb-4">Story</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {profileData.story.map((item, index) => {
               const IconComponent = getStoryIcon(item);
               return (
                 <div key={index} onClick={() => handleItemClick(item)} className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer transform hover:scale-105">
                   <IconComponent size={18} className="text-white/70" />
-                  <span className="text-white/80" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>{item}</span>
+                  <span className="text-white/80">{item}</span>
                 </div>
               );
             })}
