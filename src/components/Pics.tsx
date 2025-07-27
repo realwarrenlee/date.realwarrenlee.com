@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y, EffectCoverflow } from 'swiper/modules';
+import { Navigation, Pagination, A11y, EffectCoverflow, Autoplay } from 'swiper/modules';
 
 import deathValley from '../assets/death-valley.jpg';
 import grandCanyon from '../assets/grand-canyon.jpg';
@@ -52,14 +52,15 @@ const Pics: React.FC<PicsProps> = ({ onBack }) => {
         </div>
 
         <Swiper
-          modules={[Navigation, Pagination, A11y, EffectCoverflow]}
+          modules={[Pagination, A11y, EffectCoverflow, Autoplay]}
           spaceBetween={30}
           slidesPerView={3}
           centeredSlides={true}
           loop={true}
-          navigation={{
-            nextEl: '.swiper-button-next-custom',
-            prevEl: '.swiper-button-prev-custom',
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           pagination={{ 
             clickable: true,
@@ -129,16 +130,6 @@ const Pics: React.FC<PicsProps> = ({ onBack }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Custom Navigation Buttons */}
-        <div className="flex justify-center gap-6 mt-6">
-          <button className="swiper-button-prev-custom bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-4 transition-colors duration-200 border border-white/20 touch-manipulation">
-            <ArrowLeft size={24} className="text-white" />
-          </button>
-          <button className="swiper-button-next-custom bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-4 transition-colors duration-200 border border-white/20 touch-manipulation">
-            <ArrowLeft size={24} className="text-white rotate-180" />
-          </button>
-        </div>
       </div>
 
       <style jsx>{`
