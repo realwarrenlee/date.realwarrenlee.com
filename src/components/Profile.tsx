@@ -97,8 +97,8 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
               const IconComponent = getInterestIcon(interest);
               return (
                 <div key={index} onClick={() => handleItemClick(interest)} className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer transform hover:scale-105">
-                  <IconComponent size={18} className="text-white/70" />
-                  <span className="text-white/80">{interest}</span>
+                  <IconComponent size={18} className="text-white/70 flex-shrink-0" />
+                  <span className="text-white/80 text-sm leading-tight break-words">{interest}</span>
                 </div>
               );
             })}
@@ -111,8 +111,8 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
               const IconComponent = getValueIcon(value);
               return (
                 <div key={index} onClick={() => handleItemClick(value)} className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer transform hover:scale-105">
-                  <IconComponent size={18} className="text-white/70" />
-                  <span className="text-white/80">{value}</span>
+                  <IconComponent size={18} className="text-white/70 flex-shrink-0" />
+                  <span className="text-white/80 text-sm leading-tight break-words">{value}</span>
                 </div>
               );
             })}
@@ -125,8 +125,8 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
               const IconComponent = getLookingForIcon(item);
               return (
                 <div key={index} onClick={() => handleItemClick(item)} className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer transform hover:scale-105">
-                  <IconComponent size={18} className="text-white/70" />
-                  <span className="text-white/80">{item}</span>
+                  <IconComponent size={18} className="text-white/70 flex-shrink-0" />
+                  <span className="text-white/80 text-sm leading-tight break-words">{item}</span>
                 </div>
               );
             })}
@@ -139,8 +139,8 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
               const IconComponent = getStoryIcon(item);
               return (
                 <div key={index} onClick={() => handleItemClick(item)} className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer transform hover:scale-105">
-                  <IconComponent size={18} className="text-white/70" />
-                  <span className="text-white/80">{item}</span>
+                  <IconComponent size={18} className="text-white/70 flex-shrink-0" />
+                  <span className="text-white/80 text-sm leading-tight break-words">{item}</span>
                 </div>
               );
             })}

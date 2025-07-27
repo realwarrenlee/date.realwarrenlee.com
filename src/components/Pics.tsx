@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y, EffectCoverflow, Autoplay } from 'swiper/modules';
+import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules';
 
 import deathValley from '../assets/death-valley.jpg';
 import grandCanyon from '../assets/grand-canyon.jpg';
@@ -11,7 +11,6 @@ import sequoia from '../assets/sequoia.jpg';
 import yosemite from '../assets/yosemite.jpg';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
@@ -20,10 +19,6 @@ interface PicsProps {
 }
 
 const Pics: React.FC<PicsProps> = ({ onBack }) => {
-  const picsData = {
-    name: "Pictures",
-  };
-
   const images = [
     { id: 1, src: deathValley, alt: 'Death Valley' },
     { id: 2, src: grandCanyon, alt: 'Grand Canyon' },
@@ -47,12 +42,12 @@ const Pics: React.FC<PicsProps> = ({ onBack }) => {
 
       <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
         <div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-4">{picsData.name}</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-4">Pictures</h2>
           <div className="h-1 w-20 bg-white/30 rounded-full"></div>
         </div>
 
         <Swiper
-          modules={[Pagination, A11y, EffectCoverflow, Autoplay]}
+          modules={[Pagination, EffectCoverflow, Autoplay]}
           spaceBetween={30}
           slidesPerView={3}
           centeredSlides={true}
@@ -81,7 +76,6 @@ const Pics: React.FC<PicsProps> = ({ onBack }) => {
               spaceBetween: 20,
               coverflowEffect: {
                 rotate: 30,
-                stretch: 0,
                 depth: 60,
                 modifier: 1,
                 slideShadows: true,
@@ -92,7 +86,6 @@ const Pics: React.FC<PicsProps> = ({ onBack }) => {
               spaceBetween: 20,
               coverflowEffect: {
                 rotate: 40,
-                stretch: 0,
                 depth: 80,
                 modifier: 1,
                 slideShadows: true,
@@ -103,30 +96,22 @@ const Pics: React.FC<PicsProps> = ({ onBack }) => {
               spaceBetween: 30,
               coverflowEffect: {
                 rotate: 50,
-                stretch: 0,
                 depth: 100,
                 modifier: 1,
                 slideShadows: true,
               },
             },
           }}
-          onSwiper={(swiper) => console.log('Swiper initialized:', swiper)}
-          onSlideChange={(swiper) => console.log('Slide changed to:', swiper.activeIndex)}
           className="gallery-swiper"
         >
           {images.map((image) => (
             <SwiperSlide key={image.id}>
-              <div className="relative group cursor-pointer">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-48 sm:h-56 md:h-64 lg:h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-semibold">{image.alt}</span>
-                </div>
-              </div>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-48 sm:h-56 md:h-64 lg:h-80 object-cover rounded-lg"
+                loading="lazy"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
