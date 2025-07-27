@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           </p>
         </div>
         
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 px-4">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 pt-4 px-4">
           {navigationItems.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
