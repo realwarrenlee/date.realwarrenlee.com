@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// 1. Import useNavigate from React Router
 import { useNavigate } from 'react-router-dom';
 import {
   ArrowLeft, Heart, Code, BrainCircuit, Rocket, Gamepad2,
@@ -14,18 +13,8 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ onBack }) => {
   const navigate = useNavigate();
   const [modalContent, setModalContent] = useState<any>(null);
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      const userAgent = navigator.userAgent;
-      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-      setIsMobile(isMobileDevice);
-    };
-    
-    checkMobile();
-  }, []);
-
+  // This useEffect now only handles the body overflow when the modal is open.
   useEffect(() => {
     if (modalContent) {
       document.body.style.overflow = 'hidden';
@@ -69,15 +58,6 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
     if (contentData[key]) setModalContent(contentData[key]);
   };
 
-  // 3. This conditional rendering block is removed.
-  // The router will handle showing the Form component on the /form route.
-  /*
-  if (showForm) {
-    return <Form onBack={() => setShowForm(false)} />;
-  }
-  */
-
-  // This return statement is now the only one, it always renders the profile.
   return (
     <div className="min-h-screen w-full p-4 sm:p-6 md:p-8 text-white">
       <div className="sticky top-6 z-10">
@@ -102,7 +82,8 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
         </div>
         <div className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
           <h3 className="text-2xl font-bold mb-4">Interests</h3>
-          <div className={`grid gap-3 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
+          {/* This now defaults to 1 column on mobile and 3 on medium screens+ */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {profileData.interests.map((interest, index) => {
               const IconComponent = getInterestIcon(interest);
               return (
@@ -116,7 +97,8 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
         </div>
         <div className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
           <h3 className="text-2xl font-bold mb-4">Values</h3>
-          <div className={`grid gap-3 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
+          {/* This now defaults to 1 column on mobile and 3 on medium screens+ */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {profileData.values.map((value, index) => {
               const IconComponent = getValueIcon(value);
               return (
@@ -130,7 +112,8 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
         </div>
         <div className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
           <h3 className="text-2xl font-bold mb-4">Looking For</h3>
-          <div className={`grid gap-3 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
+          {/* This now defaults to 1 column on mobile and 3 on medium screens+ */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {profileData.lookingFor.map((item, index) => {
               const IconComponent = getLookingForIcon(item);
               return (
@@ -144,7 +127,8 @@ const Profile: React.FC<ProfileProps> = ({ onBack }) => {
         </div>
         <div className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
           <h3 className="text-2xl font-bold mb-4">Story</h3>
-          <div className={`grid gap-3 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
+           {/* This now defaults to 1 column on mobile and 3 on medium screens+ */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {profileData.story.map((item, index) => {
               const IconComponent = getStoryIcon(item);
               return (
