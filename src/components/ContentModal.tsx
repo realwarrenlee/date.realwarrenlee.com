@@ -1,7 +1,6 @@
 import React from 'react';
 
 interface ModalData {
-  isStory?: boolean;
   source?: {
     from: string;
     to: string;
@@ -20,7 +19,7 @@ interface ContentModalProps {
 const ContentModal: React.FC<ContentModalProps> = ({ onClose, data }) => {
   if (!data) return null;
 
-  const hasHeaderContent = data.isStory || data.title;
+  const hasHeaderContent = data.source || data.title;
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
@@ -29,7 +28,7 @@ const ContentModal: React.FC<ContentModalProps> = ({ onClose, data }) => {
         <div className="relative z-10">
           {hasHeaderContent && (
             <div className="mb-8">
-              {data.isStory && data.source ? (
+              {data.source ? (
                 <div className="text-lg text-white/90 mb-6 leading-relaxed">
                   <strong>From:</strong> {data.source.from}<br/>
                   <strong>To:</strong> {data.source.to}<br/>
