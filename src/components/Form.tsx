@@ -183,7 +183,6 @@ const Form: React.FC<FormProps> = ({ onBack }) => {
             </span>
             .
           </p>
-          </div>
         </div>
 
         {state.errors && state.errors.length > 0 && !state.errors.some(e => 'field' in e) && (
