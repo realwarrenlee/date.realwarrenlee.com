@@ -147,7 +147,6 @@ const Form: React.FC<FormProps> = ({ onBack }) => {
     }
   };
 
-
   if (hasAlreadySubmitted) {
     return (
       <div className="min-h-screen w-full font-inter bg-gradient-radial from-pink-300 via-purple-300 to-blue-300 flex items-center justify-center p-4">
@@ -162,8 +161,8 @@ const Form: React.FC<FormProps> = ({ onBack }) => {
   }
 
   return (
-    // This is the main container that provides the background and padding
-    <div className="min-h-screen w-full font-inter bg-gradient-radial from-pink-300 via-purple-300 to-blue-300 p-4 sm:p-6 md:p-8 text-white">
+    // This matches the Profile component structure exactly
+    <div className="min-h-screen w-full p-4 sm:p-6 md:p-8 text-white font-inter bg-gradient-radial from-pink-300 via-purple-300 to-blue-300">
       
       <div className="sticky top-6 z-10">
         <button onClick={onBack} className="flex items-center gap-2 text-white/80 hover:text-white mb-6 md:mb-8 transition-colors duration-200 group button-shadow hover:button-shadow-hover bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/10">
