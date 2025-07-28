@@ -165,7 +165,6 @@ const Form: React.FC<FormProps> = ({ onBack }) => {
     // This is the main container that provides the background and padding
     <div className="min-h-screen w-full font-inter bg-gradient-radial from-pink-300 via-purple-300 to-blue-300 p-4 sm:p-6 md:p-8 text-white">
       
-      {/* 1. The Back Button is placed here, sticky to the top */}
       <div className="sticky top-6 z-10">
         <button onClick={onBack} className="flex items-center gap-2 text-white/80 hover:text-white mb-6 md:mb-8 transition-colors duration-200 group button-shadow hover:button-shadow-hover bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/10">
           <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
@@ -173,10 +172,7 @@ const Form: React.FC<FormProps> = ({ onBack }) => {
         </button>
       </div>
 
-      {/* 2. A container for the actual form content */}
-      <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
-        
-        {/* Header Section */}
+      <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
         <div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-4">Form</h2>
           <div className="h-1 w-20 bg-white/30 rounded-full"></div>
@@ -187,9 +183,9 @@ const Form: React.FC<FormProps> = ({ onBack }) => {
             </span>
             .
           </p>
+          </div>
         </div>
 
-        {/* Formspree Error Display */}
         {state.errors && state.errors.length > 0 && !state.errors.some(e => 'field' in e) && (
           <div className="bg-red-500/20 border border-red-500/30 rounded-2xl p-4 backdrop-blur-sm">
             <div className="flex items-center gap-2 text-red-200">
@@ -204,7 +200,6 @@ const Form: React.FC<FormProps> = ({ onBack }) => {
           </div>
         )}
         
-        {/* The Form Itself */}
         <form noValidate className="space-y-6 md:space-y-8">
           {questions.map((question, index) => (
             <div key={question.key} className="bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20 backdrop-blur-sm card-shadow">
